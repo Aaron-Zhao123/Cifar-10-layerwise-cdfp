@@ -419,17 +419,15 @@ def main(argv = None):
                     pretrain = val
                 if (opt == '-dynamic_range'):
                     dynamic_range = val
-                if (item == '-c_pos'):
+                if (opt == '-c_pos'):
                     c_pos = val
-                if (item == '-c_neg'):
+                if (opt == '-c_neg'):
                     c_neg = val
-                if (item == '-central_value'):
+                if (opt == '-central_value'):
                     central_value = val
             print('pretrain is {}'.format(pretrain))
         except getopt.error, msg:
             raise Usage(msg)
-        print('central pos and central neg')
-        print(c_pos, c_neg)
         NUM_CLASSES = 10
         dropout = 0.8 # probability of keep
         BATCH_SIZE = 128
