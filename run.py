@@ -65,6 +65,7 @@ for q_width in quantisation_bits:
         ('-c_neg', c_neg),
         ('-central_value', central_value)
         ]
+    print(c_pos)
     pre_train_acc = cdfp_training.main(param)
     param = [
         ('-t', 1),
