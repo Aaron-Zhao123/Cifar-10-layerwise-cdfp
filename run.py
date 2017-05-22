@@ -28,7 +28,7 @@ keys = ['cov1', 'cov2', 'fc1', 'fc2', 'fc3']
 with open('weights/base.pkl', 'rb') as f:
     (weights_tmp, biases_val)= pickle.load(f)
 with open('masks/base.pkl', 'rb') as f:
-    weights_mask = pickle.load(f)
+    weights_mask,biases_mask = pickle.load(f)
 
 weights_val = {}
 for key in keys:
