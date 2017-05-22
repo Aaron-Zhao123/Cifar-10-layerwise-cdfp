@@ -27,7 +27,7 @@ with open('weights/base.pkl', 'rb') as f:
     weights_tmp, biases_val= pickle.load(f)
 with open('masks/base.pkl', 'rb') as f:
     weights_mask = pickle.load(f)
-    
+
 weights_val = {}
 for key in keys:
     weights_val[key] = weights_tmp[key] * weights_mask[key]
@@ -57,7 +57,7 @@ for q_width in quantisation_bits:
         ('-pretrain',1),
         ('-parent_dir', parent_dir),
         ('-base_model', base_model),
-        ('-dynamic_range', dynamic_range)，
+        ('-dynamic_range', dynamic_range),
         ('-c_pos', c_pos),
         ('-c_neg', c_neg),
         ('-central_value', central_value)
