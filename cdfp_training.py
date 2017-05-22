@@ -581,6 +581,8 @@ def main(argv = None):
                                 threshold = 0.82
                             if (q_bits >= 13):
                                 threshold = 0.82
+                            else:
+                                threshold = 0.82
 
                             print('test accuracy is {}'.format(test_acc))
                             if (test_acc >= threshold or test_acc > best_test_acc):
