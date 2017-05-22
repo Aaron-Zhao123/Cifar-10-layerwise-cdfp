@@ -428,6 +428,8 @@ def main(argv = None):
             print('pretrain is {}'.format(pretrain))
         except getopt.error, msg:
             raise Usage(msg)
+        print('central pos and central neg')
+        print(c_pos, c_neg)
         NUM_CLASSES = 10
         dropout = 0.8 # probability of keep
         BATCH_SIZE = 128
