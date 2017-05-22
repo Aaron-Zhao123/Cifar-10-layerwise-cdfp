@@ -571,18 +571,6 @@ def main(argv = None):
                             print("test accuracy is {}".format(t_acc))
                             test_acc = np.mean(t_acc)
                             accuracy_list = np.zeros(10)
-                            if (q_bits == 2):
-                                threshold = 0.6
-                            if (q_bits == 1):
-                                threshold = 0.5
-                            if (q_bits == 3):
-                                threshold = 0.8
-                            if (q_bits == 5):
-                                threshold = 0.82
-                            if (q_bits >= 13):
-                                threshold = 0.82
-                            else:
-                                threshold = 0.82
 
                             print('test accuracy is {}'.format(test_acc))
                             if (test_acc >= threshold or test_acc > best_test_acc):
