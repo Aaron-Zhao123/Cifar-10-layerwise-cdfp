@@ -1,6 +1,7 @@
 import os
 import cdfp_training
 import pickle
+import numpy as np
 
 def dump_to_txt_files(pt_acc_list, acc_list):
     with open("ptacc_cifar_quantize_han.txt", "w") as f:
