@@ -77,20 +77,20 @@ for q_width in quantisation_bits:
         ('-c_neg', c_neg),
         ('-central_value', central_value)
         ]
-    _ = cdfp_training.main(param)
-
-    param = [
-        ('-t', 0),
-        ('-q_bits',q_width),
-        ('-pretrain',0),
-        ('-parent_dir', parent_dir),
-        ('-base_model', base_model),
-        ('-dynamic_range', dynamic_range),
-        ('-c_pos', c_pos),
-        ('-c_neg', c_neg),
-        ('-central_value', central_value)
-        ]
     train_acc = cdfp_training.main(param)
+
+    # param = [
+    #     ('-t', 0),
+    #     ('-q_bits',q_width),
+    #     ('-pretrain',0),
+    #     ('-parent_dir', parent_dir),
+    #     ('-base_model', base_model),
+    #     ('-dynamic_range', dynamic_range),
+    #     ('-c_pos', c_pos),
+    #     ('-c_neg', c_neg),
+    #     ('-central_value', central_value)
+    #     ]
+    # train_acc = cdfp_training.main(param)
     pt_acc_list.append(pre_train_acc)
     acc_list.append(train_acc)
     print(pt_acc_list)
