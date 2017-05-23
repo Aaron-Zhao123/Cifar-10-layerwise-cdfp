@@ -573,7 +573,7 @@ def main(argv = None):
                             accuracy_list = np.zeros(10)
 
                             print('test accuracy is {}'.format(test_acc))
-                            if (test_acc >= threshold or test_acc > best_test_acc):
+                            if (test_acc >= 0.82 or test_acc > best_test_acc):
                                 best_test_acc = test_acc
                                 keys = ['cov1','cov2','fc1','fc2','fc3']
                                 weights_save = {}
@@ -584,7 +584,7 @@ def main(argv = None):
                                 with open(parent_dir + 'weights/'+ 'weights'+str(q_bits)+'.pkl','wb') as f:
                                     pickle.dump((weights_save, biases_save),f)
 
-                                if (best_test_acc >= threshold):
+                                if (best_test_acc >= 0.82):
                                     print('Exiting the training, test accuracy is {}'.format(test_acc))
                                     return best_test_acc
 
