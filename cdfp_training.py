@@ -557,7 +557,7 @@ def main(argv = None):
                         ))
                         # accuracy_list = np.concatenate((np.array([train_acc]),accuracy_list[0:29]))
                         accuracy_list = np.concatenate((np.array([train_acc]),accuracy_list[0:9]))
-                        if (np.mean(accuracy_list) > 0.8):
+                        if (np.mean(accuracy_list) > 0.8 and train_acc >0.85):
                             print("training accuracy is large, show the list: {}".format(accuracy_list))
                             NUMBER_OF_BATCH = 10000 / BATCH_SIZE
                             t_acc = []
