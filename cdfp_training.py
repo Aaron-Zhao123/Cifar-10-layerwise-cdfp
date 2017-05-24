@@ -539,7 +539,7 @@ def main(argv = None):
 
             start = time.time()
             if TRAIN == 1:
-                for i in range(0,30000):
+                for i in range(0,60000):
                     (batch_x, batch_y) = t_data.feed_next_batch(BATCH_SIZE)
                     train_acc, cross_en = sess.run([accuracy, loss_value], feed_dict = {
                                     x: batch_x,
@@ -557,7 +557,7 @@ def main(argv = None):
                         ))
                         # accuracy_list = np.concatenate((np.array([train_acc]),accuracy_list[0:29]))
                         accuracy_list = np.concatenate((np.array([train_acc]),accuracy_list[0:9]))
-                        if (np.mean(accuracy_list) > 0.8 and train_acc >0.85):
+                        if ((np.mean(accuracy_list) > 0.8 and train_acc >0.83) or train_acc > 0.88):
                             print("training accuracy is large, show the list: {}".format(accuracy_list))
                             NUMBER_OF_BATCH = 10000 / BATCH_SIZE
                             t_acc = []
